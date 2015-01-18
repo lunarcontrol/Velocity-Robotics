@@ -45,8 +45,8 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////n
 
 #ifdef d_code_moved
-This template function has been moved to the constants.h header file, so it can
-be used for both manual and autonomous purposes.
+//This template function has been moved to the constants.h header file, so it can
+//be used for both manual and autonomous purposes.
 void initializeRobot()
 {
 
