@@ -1,7 +1,7 @@
 #pragma config(Hubs,  S1, HTMotor,  HTServo,  none,     none)
 #pragma config(Sensor, S2,     eye_sensor,     sensorLightActive)
-#pragma config(Motor,  motorA,          left_arm_motor, tmotorNXT, PIDControl, encoder)
-#pragma config(Motor,  motorB,          right_arm_motor, tmotorNXT, PIDControl, encoder)
+#pragma config(Motor,  motorA,          left_arm_sensor, tmotorNXT, PIDControl, encoder)
+#pragma config(Motor,  motorB,          right_arm_sensor, tmotorNXT, PIDControl, encoder)
 #pragma config(Motor,  motorC,           ,             tmotorNXT, PIDControl)
 #pragma config(Motor,  mtr_S1_C1_1,     left_foot_motor, tmotorTetrix, openLoop, reversed, encoder)
 #pragma config(Motor,  mtr_S1_C1_2,     right_foot_motor, tmotorTetrix, openLoop, encoder)
@@ -49,9 +49,15 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef d_code_moved
+<<<<<<< HEAD
 //This template function has been moved to the constants.h header file, so it can
 //be used for both manual and autonomous purposes.
 	void initializeRobot()
+=======
+This template function has been moved to the constants.h header file, so it can
+be used for both manual and autonomous purposes.
+void initializeRobot()
+>>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
 {
 
 } // initializeRobot
@@ -80,62 +86,62 @@
 
 task main()
 {
-	initialize ();  // In the original template this was "initializeRobot();"
+    initialize ();  // In the original template this was "initializeRobot();"
 
-	waitForStart (); // Wait for the beginning of autonomous phase.
+    waitForStart (); // Wait for the beginning of autonomous phase.
 
-	//
-	// Raise the arm.  Unless the arm is ALL the way down, this call will hang
-	// your robot.
-	//
-	//  raise_arm ();
+    //
+    // Raise the arm.  Unless the arm is ALL the way down, this call will hang
+    // your robot.
+    //
+//  raise_arm ();
 
-	//
-	// Drive forward twelve inches.
-	//
-	drive_both_wheels (75, 75, 12 * kInch);
+    //
+    // Drive forward twelve inches.
+    //
+    drive_both_wheels (75, 75, 12 * kInch);
 
-	//
-	// Rotate right 90 degrees.  This will cause one motor to turn in one
-	// direction, but the other will turn in the opposite direction.
-	//
-	TurnRight (90 * kDegrees);
+    //
+    // Rotate right 90 degrees.  This will cause one motor to turn in one
+    // direction, but the other will turn in the opposite direction.
+    //
+    TurnRight (90 * kDegrees);
 
-	//
-	// Drive forward twelve inches.
-	//
-	drive_both_wheels (75, 75, 12 * kInch);
+    //
+    // Drive forward twelve inches.
+    //
+    drive_both_wheels (75, 75, 12 * kInch);
 
-	//
-	// Rotate right 90 degrees.  This will cause one motor to turn in one
-	// direction, but the other will turn in the opposite direction.
-	//
-	TurnRight (90 * kDegrees);
+    //
+    // Rotate right 90 degrees.  This will cause one motor to turn in one
+    // direction, but the other will turn in the opposite direction.
+    //
+    TurnRight (90 * kDegrees);
 
-	//
-	// Drive forward until a white line is found.
-	//
-	find_line ();
+    //
+    // Drive forward until a white line is found.
+    //
+    find_line ();
 
-	//
-	// Lower the arm and close the hand.
-	//
-	//  lower_arm ();
-	move_hand (e_hand_command_close);
+    //
+    // Lower the arm and close the hand.
+    //
+//  lower_arm ();
+    move_hand (e_hand_command_close);
 
-	//
-	// Drive forward twelve inches.
-	//
-	drive_both_wheels (75, 75, 12 * kInch);
+    //
+    // Drive forward twelve inches.
+    //
+    drive_both_wheels (75, 75, 12 * kInch);
 
-	//
-	// Rotate left 90 degrees.
-	//
-	TurnLeft (90 * kDegrees);
+    //
+    // Rotate left 90 degrees.
+    //
+    TurnLeft (90 * kDegrees);
 
-	//
-	// Drive forward twelve inches.
-	//
-	drive_both_wheels (75, 75, 12 * kInch);
+    //
+    // Drive forward twelve inches.
+    //
+    drive_both_wheels (75, 75, 12 * kInch);
 
 } // main

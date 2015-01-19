@@ -151,90 +151,90 @@ void TurnLeft (float Degrees)
 // move_arm
 //
 //-------
-//enum e_arm_command
-//{
-//    e_invalid_arm_command,
+enum e_arm_command
+{
+    e_invalid_arm_command,
 
-//    e_arm_command_stop,
-//    e_arm_command_raise,
-//    e_arm_command_lower,
+    e_arm_command_stop,
+    e_arm_command_raise,
+    e_arm_command_lower,
 
-//    e_count_arm_command
-//};
+    e_count_arm_command
+};
 
-//e_arm_command move_arm (e_arm_command a_command)
+e_arm_command move_arm (e_arm_command a_command)
 
-//{
-//    e_arm_command l_command = a_command;
+{
+    e_arm_command l_command = a_command;
 
-//    switch (l_command)
-//    {
-//    case e_arm_command_stop:
-//    default:
-//        motor[c_left_arm_motor] = 0;
-//        motor[c_right_arm_motor] = 0;
-//        nMotorEncoder[c_left_arm_motor] = 0;
-//        nMotorEncoder[c_right_arm_motor] = 0;
-//        break;
-//    case e_arm_command_raise:
-//        if (nMotorEncoder[c_left_arm_motor] < -550)
-//        {
-//            motor[c_left_arm_motor] = 0;
-//            motor[c_right_arm_motor] = 0;
-//            nMotorEncoder[c_left_arm_motor] = 0;
-//            nMotorEncoder[c_right_arm_motor] = 0;
-//            l_command = e_arm_command_stop;
-//        }
-//        break;
-//    case e_arm_command_lower:
-//        if (nMotorEncoder[c_left_arm_motor] > 550)
-//        {
-//            motor[c_left_arm_motor] = 0;
-//            motor[c_right_arm_motor] = 0;
-//            nMotorEncoder[c_left_arm_motor] = 0;
-//            nMotorEncoder[c_right_arm_motor] = 0;
-//            l_command = e_arm_command_stop;
-//        }
-//        break;
-//    }
+    switch (l_command)
+    {
+    case e_arm_command_stop:
+    default:
+        motor[c_left_arm_motor] = 0;
+        motor[c_right_arm_motor] = 0;
+        nMotorEncoder[c_left_arm_motor] = 0;
+        nMotorEncoder[c_right_arm_motor] = 0;
+        break;
+    case e_arm_command_raise:
+        if (nMotorEncoder[c_left_arm_motor] < -550)
+        {
+            motor[c_left_arm_motor] = 0;
+            motor[c_right_arm_motor] = 0;
+            nMotorEncoder[c_left_arm_motor] = 0;
+            nMotorEncoder[c_right_arm_motor] = 0;
+            l_command = e_arm_command_stop;
+        }
+        break;
+    case e_arm_command_lower:
+        if (nMotorEncoder[c_left_arm_motor] > 550)
+        {
+            motor[c_left_arm_motor] = 0;
+            motor[c_right_arm_motor] = 0;
+            nMotorEncoder[c_left_arm_motor] = 0;
+            nMotorEncoder[c_right_arm_motor] = 0;
+            l_command = e_arm_command_stop;
+        }
+        break;
+    }
 
-//    return l_command;
+    return l_command;
 
-//} // move_arm
+} // move_arm
 
 //-------------------------------------------------------------------------------
 //
 // lower_arm
 //
 //-------
-// void lower_arm (void)
+void lower_arm (void)
 
-//{
-//    motor[c_left_arm_motor] = 75;
-//    motor[c_right_arm_motor] = 75;
-//    while (move_arm (e_arm_command_lower) != e_arm_command_stop)
-//    {
-//        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
-//    };
+{
+    motor[c_left_arm_motor] = 75;
+    motor[c_right_arm_motor] = 75;
+    while (move_arm (e_arm_command_lower) != e_arm_command_stop)
+    {
+        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
+    };
 
-//} // lower_arm
+} // lower_arm
 
 //-------------------------------------------------------------------------------
 //
 // raise_arm
 //
 //-------
-//void raise_arm (void)
+void raise_arm (void)
 
-//{
-//    motor[c_left_arm_motor] = -50;
-//    motor[c_right_arm_motor] = -50;
-//    while (move_arm (e_arm_command_raise) != e_arm_command_stop)
-//    {
-//        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
-//    };
+{
+    motor[c_left_arm_motor] = -50;
+    motor[c_right_arm_motor] = -50;
+    while (move_arm (e_arm_command_raise) != e_arm_command_stop)
+    {
+        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
+    };
 
-//} // raise_arm
+} // raise_arm
 
 //-------------------------------------------------------------------------------
 //
