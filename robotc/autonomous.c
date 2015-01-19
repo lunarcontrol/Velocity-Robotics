@@ -58,6 +58,9 @@ This template function has been moved to the constants.h header file, so it can
 be used for both manual and autonomous purposes.
 void initializeRobot()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
+=======
 >>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
 =======
 >>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
