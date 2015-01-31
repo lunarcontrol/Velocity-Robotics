@@ -17,20 +17,22 @@ const tMotor c_right_foot_motor = right_foot_motor;
 //
 // Define LEGO motor (aka arm) constants.
 //
-const tMotor c_left_arm_motor = left_arm_motor;
-const tMotor c_right_arm_motor = right_arm_motor;
+//commented 21 & 22 'cause Undefined variable 'left_arm_motor'. 'short' assumed.
+//const tMotor c_left_arm_motor = left_arm_motor;
+//const tMotor c_right_arm_motor = right_arm_motor;
 
 //------------------------------------------------------------------------------
 //
 // Define servo motor (aka hand) constants.
 //
-const TServoIndex c_left_hand_motor = left_hand_servo;
-const TServoIndex c_right_hand_motor = right_hand_servo;
+//comment out all things dealing with arms and hands.
+//const TServoIndex c_left_hand_motor = left_hand_servo;
+//const TServoIndex c_right_hand_motor = right_hand_servo;
 
-const int c_left_hand_motor_fully_open_position = 0;
-const int c_left_hand_motor_fully_closed_position = 180;
-const int c_right_hand_motor_fully_open_position = 255;
-const int c_right_hand_motor_fully_closed_position = 75;
+//const int c_left_hand_motor_fully_open_position = 0;
+//const int c_left_hand_motor_fully_closed_position = 180;
+//const int c_right_hand_motor_fully_open_position = 255;
+//const int c_right_hand_motor_fully_closed_position = 75;
 
 //------------------------------------------------------------------------------
 //

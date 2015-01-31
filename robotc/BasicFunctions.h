@@ -151,169 +151,178 @@ void TurnLeft (float Degrees)
 // move_arm
 //
 //-------
-enum e_arm_command
-{
-    e_invalid_arm_command,
+// comment because unreferenced enum 'e_arm_command'
 
-    e_arm_command_stop,
-    e_arm_command_raise,
-    e_arm_command_lower,
+//enum e_arm_command
+//{
+//    e_invalid_arm_command,
 
-    e_count_arm_command
-};
+//    e_arm_command_stop,
+//    e_arm_command_raise,
+//    e_arm_command_lower,
 
-e_arm_command move_arm (e_arm_command a_command)
+//    e_count_arm_command
+//};
 
-{
-    e_arm_command l_command = a_command;
+//commented because Unreferenced function 'move_arm'
+//e_arm_command move_arm (e_arm_command a_command)
 
-    switch (l_command)
-    {
-    case e_arm_command_stop:
-    default:
-        motor[c_left_arm_motor] = 0;
-        motor[c_right_arm_motor] = 0;
-        nMotorEncoder[c_left_arm_motor] = 0;
-        nMotorEncoder[c_right_arm_motor] = 0;
-        break;
-    case e_arm_command_raise:
-        if (nMotorEncoder[c_left_arm_motor] < -550)
-        {
-            motor[c_left_arm_motor] = 0;
-            motor[c_right_arm_motor] = 0;
-            nMotorEncoder[c_left_arm_motor] = 0;
-            nMotorEncoder[c_right_arm_motor] = 0;
-            l_command = e_arm_command_stop;
-        }
-        break;
-    case e_arm_command_lower:
-        if (nMotorEncoder[c_left_arm_motor] > 550)
-        {
-            motor[c_left_arm_motor] = 0;
-            motor[c_right_arm_motor] = 0;
-            nMotorEncoder[c_left_arm_motor] = 0;
-            nMotorEncoder[c_right_arm_motor] = 0;
-            l_command = e_arm_command_stop;
-        }
-        break;
-    }
+//commented because Undefined variable 'a_command'. 'short' assumed.
+//{
 
-    return l_command;
+//   e_arm_command l_command = a_command;
 
-} // move_arm
+//    switch (l_command)
+//    {
+//    case e_arm_command_stop:
+//    default:
+//        motor[c_left_arm_motor] = 0;
+//        motor[c_right_arm_motor] = 0;
+//        nMotorEncoder[c_left_arm_motor] = 0;
+//        nMotorEncoder[c_right_arm_motor] = 0;
+//        break;
+//    case e_arm_command_raise:
+//        if (nMotorEncoder[c_left_arm_motor] < -550)
+//        {
+//            motor[c_left_arm_motor] = 0;
+//            motor[c_right_arm_motor] = 0;
+//            nMotorEncoder[c_left_arm_motor] = 0;
+//            nMotorEncoder[c_right_arm_motor] = 0;
+//            l_command = e_arm_command_stop;
+//        }
+//        break;
+//    case e_arm_command_lower:
+//        if (nMotorEncoder[c_left_arm_motor] > 550)
+//        {
+//            motor[c_left_arm_motor] = 0;
+//            motor[c_right_arm_motor] = 0;
+//            nMotorEncoder[c_left_arm_motor] = 0;
+//            nMotorEncoder[c_right_arm_motor] = 0;
+//            l_command = e_arm_command_stop;
+//        }
+//        break;
+//    }
+
+//    return l_command;
+
+//} // move_arm
 
 //-------------------------------------------------------------------------------
 //
 // lower_arm
 //
 //-------
-void lower_arm (void)
 
-{
-    motor[c_left_arm_motor] = 75;
-    motor[c_right_arm_motor] = 75;
-    while (move_arm (e_arm_command_lower) != e_arm_command_stop)
-    {
-        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
-    };
+// Commented 'cause Unreferenced function 'lower_arm'
+//void lower_arm (void)
 
-} // lower_arm
+//{
+//    motor[c_left_arm_motor] = 75;
+//    motor[c_right_arm_motor] = 75;
+//    while (move_arm (e_arm_command_lower) != e_arm_command_stop)
+//    {
+//        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
+//    };
+
+//} // lower_arm
 
 //-------------------------------------------------------------------------------
 //
 // raise_arm
 //
 //-------
-void raise_arm (void)
 
-{
-    motor[c_left_arm_motor] = -50;
-    motor[c_right_arm_motor] = -50;
-    while (move_arm (e_arm_command_raise) != e_arm_command_stop)
-    {
-        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
-    };
+//commented 'cause Unreferenced function 'raise_arm'
+//void raise_arm (void)
 
-} // raise_arm
+//{
+//    motor[c_left_arm_motor] = -50;
+//    motor[c_right_arm_motor] = -50;
+//    while (move_arm (e_arm_command_raise) != e_arm_command_stop)
+//    {
+//        displayTextLine (2, "%d   %d", nMotorEncoder[c_left_arm_motor], nMotorEncoder[c_right_arm_motor]);
+//    };
+
+//} // raise_arm
 
 //-------------------------------------------------------------------------------
 //
 // move_hand
 //
 //-------
-enum e_hand_command
-{
-    e_invalid_hand_command,
+//enum e_hand_command
+//{
+//    e_invalid_hand_command,
 
-    e_hand_command_open,
-    e_hand_command_close,
-    e_hand_command_partially_open,
-    e_hand_command_partially_close,
+//    e_hand_command_open,
+//    e_hand_command_close,
+//    e_hand_command_partially_open,
+//    e_hand_command_partially_close,
 
-    e_count_hand_command
-};
+//    e_count_hand_command
+//};
 
-void move_hand (e_hand_command a_command)
+//void move_hand (e_hand_command a_command)
 
-{
-    //
-    // These variables help control the hand servo motors.
-    //
-    static int left_hand_motor_position = c_left_hand_motor_fully_open_position;
-    static int right_hand_motor_position = c_right_hand_motor_fully_open_position;
+//{
+//    //
+//    // These variables help control the hand servo motors.
+//    //
+//    static int left_hand_motor_position = c_left_hand_motor_fully_open_position;
+//    static int right_hand_motor_position = c_right_hand_motor_fully_open_position;
 
-    switch (a_command)
-    {
-    case e_hand_command_open:
-        left_hand_motor_position = c_left_hand_motor_fully_open_position;
-        right_hand_motor_position = c_right_hand_motor_fully_open_position;
-        break;
-    case e_hand_command_close:
-        left_hand_motor_position = c_left_hand_motor_fully_closed_position;
-        right_hand_motor_position = c_right_hand_motor_fully_closed_position;
-        break;
-    case e_hand_command_partially_open:
-        //
-        // This increment block allows the user to control how far open or
-        // shut the hand is.  This block opens the claws by an increment.
-        // The increment is set to 2 here, but if you want the hand to
-        // open more quickly then set it to a higher number here.  Alternately,
-        // decrease the wait and the end of the while (true) block.
-        //
-        left_hand_motor_position = left_hand_motor_position - 2;
-        right_hand_motor_position = right_hand_motor_position + 2;
-        break;
-    case e_hand_command_partially_close:
-        left_hand_motor_position = left_hand_motor_position + 2;
-        right_hand_motor_position = right_hand_motor_position - 2;
-        break;
-    }
+//    switch (a_command)
+//    {
+//    case e_hand_command_open:
+//        left_hand_motor_position = c_left_hand_motor_fully_open_position;
+//        right_hand_motor_position = c_right_hand_motor_fully_open_position;
+//        break;
+//    case e_hand_command_close:
+//        left_hand_motor_position = c_left_hand_motor_fully_closed_position;
+//        right_hand_motor_position = c_right_hand_motor_fully_closed_position;
+//        break;
+//    case e_hand_command_partially_open:
+//        //
+//        // This increment block allows the user to control how far open or
+//        // shut the hand is.  This block opens the claws by an increment.
+//        // The increment is set to 2 here, but if you want the hand to
+//        // open more quickly then set it to a higher number here.  Alternately,
+//        // decrease the wait and the end of the while (true) block.
+//        //
+//        left_hand_motor_position = left_hand_motor_position - 2;
+//        right_hand_motor_position = right_hand_motor_position + 2;
+//        break;
+//    case e_hand_command_partially_close:
+//        left_hand_motor_position = left_hand_motor_position + 2;
+//        right_hand_motor_position = right_hand_motor_position - 2;
+//        break;
+//    }
 
-    //
-    // Make sure that the servo values are within acceptable limits.
-    //
-    if (left_hand_motor_position < c_left_hand_motor_fully_open_position)
-    {
-        left_hand_motor_position = c_left_hand_motor_fully_open_position;
-    }
-    else if (left_hand_motor_position > c_left_hand_motor_fully_closed_position)
-    {
-        left_hand_motor_position = c_left_hand_motor_fully_closed_position;
-    }
+//    //
+//    // Make sure that the servo values are within acceptable limits.
+//    //
+//    if (left_hand_motor_position < c_left_hand_motor_fully_open_position)
+//    {
+//        left_hand_motor_position = c_left_hand_motor_fully_open_position;
+//    }
+//    else if (left_hand_motor_position > c_left_hand_motor_fully_closed_position)
+//    {
+//        left_hand_motor_position = c_left_hand_motor_fully_closed_position;
+//    }
 
-    if (right_hand_motor_position > c_right_hand_motor_fully_open_position)
-    {
-        right_hand_motor_position = c_right_hand_motor_fully_open_position;
-    }
-    else if (right_hand_motor_position < c_right_hand_motor_fully_closed_position)
-    {
-        right_hand_motor_position = c_right_hand_motor_fully_closed_position;
-    }
+//    if (right_hand_motor_position > c_right_hand_motor_fully_open_position)
+//    {
+//        right_hand_motor_position = c_right_hand_motor_fully_open_position;
+//    }
+//    else if (right_hand_motor_position < c_right_hand_motor_fully_closed_position)
+//    {
+//        right_hand_motor_position = c_right_hand_motor_fully_closed_position;
+//    }
 
-    //
-    // Command the servos to a position.
-    //
-    servoTarget[c_left_hand_motor] = left_hand_motor_position;
-    servoTarget[c_right_hand_motor] = right_hand_motor_position;
+//    //
+//    // Command the servos to a position.
+//    //
+//    servoTarget[c_left_hand_motor] = left_hand_motor_position;
+//    servoTarget[c_right_hand_motor] = right_hand_motor_position;
 
-} // move_hand
+//} // move_hand

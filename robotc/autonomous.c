@@ -49,21 +49,15 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef d_code_moved
-<<<<<<< HEAD
+
 //This template function has been moved to the constants.h header file, so it can
 //be used for both manual and autonomous purposes.
 	void initializeRobot()
-=======
-This template function has been moved to the constants.h header file, so it can
-be used for both manual and autonomous purposes.
+
+//This template function has been moved to the constants.h header file, so it can
+//be used for both manual and autonomous purposes.
 void initializeRobot()
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
-=======
->>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
-=======
->>>>>>> parent of fe22446... Final 1/11/15 With Commented Lines
+
 {
 
 } // initializeRobot
@@ -133,7 +127,8 @@ task main()
     // Lower the arm and close the hand.
     //
 //  lower_arm ();
-    move_hand (e_hand_command_close);
+    //code does not like hand command.
+   // move_hand (e_hand_command_close);
 
     //
     // Drive forward twelve inches.

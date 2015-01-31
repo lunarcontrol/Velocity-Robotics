@@ -18,14 +18,17 @@ void initialize (void)
     //
     // Initialize the foot motors.
     //
-    nMotorEncoder[c_left_arm_motor] = 0;
+    //undefined variable c_left_arm_motor.
+   // nMotorEncoder[c_left_arm_motor] = 0;
     nMotorEncoder[c_right_foot_motor] = 0;
 
     //
     // Initialize the arm motors.
     //
-    nMotorEncoder[c_left_arm_motor] = 0;
-    nMotorEncoder[c_right_arm_motor] = 0;
+    // this code does not like arm's and hands.
+    //nMotorEncoder[c_left_arm_motor] = 0;
+    //undefined variable c_right_arm_motor
+    //nMotorEncoder[c_right_arm_motor] = 0;
 
     //
     // Initialize the hand motors.
@@ -33,7 +36,8 @@ void initialize (void)
     // As part of initialization, move the servos to the open position.  The
     // servos need to be open, so the robot remains less than 18 inches deep.
     //
-    move_hand (e_hand_command_open);
+    //code does nto like hand command.
+  //  move_hand (e_hand_command_open);
 
     //
     // Set the amount of clicks required to turn the NXT (aka brick) off.  This
